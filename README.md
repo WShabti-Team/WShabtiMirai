@@ -17,4 +17,5 @@ sudo docker build -t cnc .
 docker-compose up --scale bot=<NUM_OF_BOTS>
 ```
 
-by WShabti Team
+# Mirai Source Code 
+https://github.com/jgamblin/Mirai-Source-Code
