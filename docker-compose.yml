@@ -1,0 +1,36 @@
+version: "3"
+services: 
+  cnc:
+    image: cnc:latest
+    ports:
+      - "8088:23"
+    networks:
+      - botnet_network
+ 
+  bot:
+    image: bot:latest
+    networks:
+      - botnet_network
+      - internet_network
+
+  wireshark:
+    image: lscr.io/linuxserver/wireshark:latest
+    networks:
+      internet_network:
+        ipv4_address: 192.168.33.33
+    cap_add:
+      - NET_ADMIN
+    ports: 
+      - "3000:3000"
+      - "80:80"
+networks:
+  botnet_network:
+    ipam:
+      config:
+        - subnet: 192.168.32.0/24
+    driver: bridge
+  internet_network:
+    ipam:
+      config:
+        - subnet: 192.168.33.0/24
+    driver: bridge
