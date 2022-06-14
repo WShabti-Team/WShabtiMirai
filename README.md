@@ -1,4 +1,4 @@
-Rete di container Docker per lo studio della botnet Mirai.
+![image](https://user-images.githubusercontent.com/45710698/173601062-403108c5-3f77-4aae-b66a-589ac0909b44.png)
 
 ##### Building
 ```
